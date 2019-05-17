@@ -110,7 +110,7 @@ class AmlServiceSpec extends Specification {
         actual == result
         1 * amlCheckRepository.findAllByUser(mandate.user) >> checks
         if (!result) {
-            1 * auditEventPublisher.publish(mandate.user.getEmail(), AuditEventType.MANDATE_DENIED)
+            1 * auditEventPublisher.publish(mandate.user.getPersonalCode(), AuditEventType.MANDATE_DENIED)
         }
         where:
         checks                                                                                                                             | result

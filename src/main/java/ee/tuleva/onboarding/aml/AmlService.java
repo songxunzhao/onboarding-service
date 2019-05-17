@@ -103,7 +103,7 @@ public class AmlService {
             }
         }
         log.error("All necessary AML checks not passed for user {}!", user.getId());
-        auditEventPublisher.publish(user.getEmail(), AuditEventType.MANDATE_DENIED);
+        auditEventPublisher.publish(user.getPersonalCode(), AuditEventType.MANDATE_DENIED);
         return false;
     }
 }
